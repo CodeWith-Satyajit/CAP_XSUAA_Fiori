@@ -1,0 +1,43 @@
+{
+  "xsappname": "cap_xsuaa_fiori",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    },
+    {
+      "name": "$XSAPPNAME.CompanyCode_Access",
+      "description": "Company Code Access"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "CompanyCode",  
+      "valueType": "int",
+      "valueRequired": false
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": [
+        "uaa.user"
+      ]
+    },
+    {
+      "name": "CompanyCode_Access",
+      "description": "Company Code Access",
+      "scope-references": [
+        "$XSAPPNAME.CompanyCode_Access"
+      ],
+      "attribute-references": [
+        {
+          "name": "CompanyCode"
+        }
+      ]
+    }
+  ]
+}

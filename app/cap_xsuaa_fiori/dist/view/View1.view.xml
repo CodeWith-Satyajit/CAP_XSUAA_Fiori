@@ -1,0 +1,39 @@
+<mvc:View controllerName="capxsuaafiori.capxsuaafiori.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:m="sap.m" xmlns="sap.ui.table">
+ <m:Page id="page" title="{i18n>title}">
+        <m:content>
+            <Table enableCellFilter="true" visibleRowCount="15" id="idTabel01" rows="{textModel>/}" selectionMode="Single">
+                <columns>
+                    <Column id="c1" width="25%">
+                        <m:Label text="Company Code" id="l1" />
+                        <template>
+                            <m:Text text="{textModel>CompanyCode}" id="t1" />
+                        </template>
+                    </Column>
+                    <Column width="50%" id="c2">
+                        <m:Label text="Company Name" id="l2" />
+                        <template>
+                            <m:Text text="{textModel>ComapnyName}" id="t2" />
+                        </template>
+                    </Column>
+                    <Column width="25%" id="c3">
+                        <m:Label text="Country Code" id="l3" />
+                        <template>
+                            <m:Text text="{textModel>CountryCode}" id="t3" />
+                        </template>
+                    </Column>
+                </columns>
+            </Table>
+        </m:content>
+        <m:customHeader>
+            <m:Toolbar width="100%" id="toolbar1">
+                <m:content>
+                    <Button xmlns="sap.m" text="Create" id="button1" press="create" />
+                    <Button xmlns="sap.m" text="Read" id="button4" press="read" />
+                    <Button xmlns="sap.m" text="Update" id="button2" press="update" />
+                    <Button xmlns="sap.m" text="Delete" id="button3" press="delete" />
+                </m:content>
+            </m:Toolbar>
+        </m:customHeader>
+    </m:Page>
+</mvc:View>
